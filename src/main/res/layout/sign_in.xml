@@ -22,6 +22,7 @@
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/enter"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -59,6 +60,7 @@
             android:orientation="vertical">
 
             <EditText
+                android:id="@+id/surname"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="48dp"
@@ -79,6 +81,7 @@
             android:orientation="vertical">
 
             <EditText
+                android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="48dp"
@@ -99,6 +102,7 @@
             android:orientation="vertical">
 
             <EditText
+                android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="48dp"
@@ -119,6 +123,7 @@
             android:orientation="vertical">
 
             <EditText
+                android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="48dp"
@@ -144,6 +149,7 @@
                 android:layout_height="80dp">
 
                 <CheckBox
+                    android:id="@+id/checkbox"
                     android:layout_width="240dp"
                     android:layout_height="match_parent"
                     android:layout_alignParentStart="true"
@@ -170,11 +176,12 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_registration"
                 android:layout_width="212dp"
                 android:layout_height="71dp"
                 android:layout_centerInParent="true"
                 android:layout_marginBottom="15dp"
-                android:background="@drawable/round_all_dark_violet"
+                android:background="@drawable/round_all"
                 android:fontFamily="serif"
                 android:text="@string/registration"
                 android:textAlignment="center"
@@ -182,7 +189,8 @@
                 android:textColor="@android:color/white"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                android:typeface="serif">
+                android:typeface="serif"
+                android:enabled="false">
 
             </androidx.appcompat.widget.AppCompatButton>
 

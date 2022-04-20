@@ -22,9 +22,10 @@
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/enter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/round_all_dark_violet"
+                android:background="@drawable/round_all_violet"
                 android:fontFamily="serif"
                 android:padding="10dp"
                 android:text="@string/sign_in"
@@ -34,10 +35,11 @@
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/registration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:background="@drawable/round_all_violet"
+                android:background="@drawable/round_all_dark_violet"
                 android:baselineAligned="false"
                 android:fontFamily="serif"
                 android:padding="10dp"
@@ -59,6 +61,7 @@
             android:orientation="vertical">
 
             <EditText
+                android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="48dp"
@@ -79,6 +82,7 @@
             android:orientation="vertical">
 
             <EditText
+                android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="48dp"

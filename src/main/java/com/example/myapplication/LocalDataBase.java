@@ -31,7 +31,7 @@ public abstract class LocalDataBase extends RoomDatabase {
 
     public void insertUser(User user) {
         new Thread(() -> {
-            daoUser().insertAllUsers(user);
+            daoUser().insertUser(user);
         }).start();
     }
 }

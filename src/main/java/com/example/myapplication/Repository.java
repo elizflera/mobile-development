@@ -4,6 +4,8 @@ import android.app.Application;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.example.myapplication.models.User;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,13 +23,10 @@ public class Repository {
         dataBase = LocalDataBase.init(application);
     }
 
-    public void setMessage(String message) {
-        this.message.postValue(message);
+    public void insertUser(User user){
+        dataBase.insertUser(user);
     }
 
-    public LiveData<String> getMessage() {
-        return message;
-    }
 }
 
 

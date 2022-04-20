@@ -10,18 +10,18 @@ import java.util.UUID;
 public class User {
     @PrimaryKey
     @NonNull
-    private Long uid;
+    private Long id;
     @ColumnInfo(name = "surname")
     private String surname;
     @ColumnInfo(name = "name")
     private String name;
-    @ColumnInfo(name = "e-mail")
+    @ColumnInfo(name = "email")
     private String email;
     @ColumnInfo(name = "password")
     private String password;
 
     public User(String surname, String name, String email, String password){
-        this.uid=UUID.randomUUID().getMostSignificantBits();
+        this.id=UUID.randomUUID().getMostSignificantBits();
         this.name = surname;
         this.surname = name;
         this.email = email;
@@ -29,9 +29,9 @@ public class User {
     }
 
     @NonNull
-    public Long getId() { return uid; }
+    public Long getId() { return id; }
 
-    public void setId(@NonNull Long id) {this.uid = id; }
+    public void setId(@NonNull Long id) {this.id = id; }
 
     public String getSurname() { return surname; }
 
