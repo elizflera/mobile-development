@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name"></string>
+    <string name="sign_up">Регистрация</string>
+    <string name="sign_in">Войти</string>
+    <string name="enter">Вход</string>
+    <string name="registration">Регистрация</string>
+    <string name="reset_password">Сбросить пароль</string>
+    <string name="dropable">open</string>
+    <string name="tick">tick</string>
+    <string name="search">Поиск</string>
+    <string name="add_to_calendar">Добавить соревнования в Мой календарь</string>
+    <string name="select_place">Выбор места</string>
+    <string name="select_level">Выбор уровня</string>
+    <string name="exit">Выход</string>
+    <string name="download_photo">Загрузить фото</string>
+    <string name="become_redactor">Стать редактором</string>
+</resources>
