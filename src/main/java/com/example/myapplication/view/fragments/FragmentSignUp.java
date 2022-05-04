@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,6 +16,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.myapplication.FragmentChanger;
 import com.example.myapplication.R;
 import com.example.myapplication.viewmodels.ViewModelSignUp;
 
@@ -33,19 +36,47 @@ public class FragmentSignUp extends Fragment {
             @Nullable Bundle savedInstanceState
     ) {
         View root = inflater.inflate(R.layout.sign_up, container, false);
-
         ViewModelSignUp viewModelSignUp = new ViewModelProvider(this)
                 .get(ViewModelSignUp.class);
 
-        EditText email = root.findViewById(R.id.email);
-        EditText password = root.findViewById(R.id.password);
+        TextView forget_password = root.findViewById(R.id.forget_password);
+        forget_password.setOnClickListener(view -> {
+            FragmentChanger.replaceFragment(
+                    requireActivity().getSupportFragmentManager(),
+                    R.id.container,
+                    new FragmentForgetPassword()
+            );
+        });
+
+
+
         Button buttonRegistration = root.findViewById(R.id.registration);
         buttonRegistration.setOnClickListener(view -> {
-            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container, new FragmentSignIn());
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
+            FragmentChanger.replaceFragment(
+                    requireActivity().getSupportFragmentManager(),
+                    R.id.container,
+                    new FragmentSignIn()
+            );
+        });
+        EditText email = root.findViewById(R.id.email);
+        EditText password = root.findViewById(R.id.password);
+
+        Button buttonEnter = root.findViewById(R.id.button_enter);
+        buttonEnter.setOnClickListener(view -> {
+
+            String emailText = String.valueOf(email.getText());
+            String passwordText = String.valueOf(password.getText());
+
+            if (emailText.equals("")) {
+                Toast.makeText(getContext(), "Empty email!", Toast.LENGTH_LONG).show();
+            } else if (passwordText.equals("")) {
+                Toast.makeText(getContext(), "Empty password!", Toast.LENGTH_LONG).show();
+            } else {
+                FragmentChanger.replaceFragment(
+                        requireActivity().getSupportFragmentManager(),
+                        R.id.container,
+                        new FragmentNavigation());
+            }
         });
 
 

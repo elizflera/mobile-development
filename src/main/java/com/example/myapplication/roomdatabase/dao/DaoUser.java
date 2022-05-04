@@ -1,11 +1,12 @@
-package com.example.myapplication.models;
+package com.example.myapplication.roomdatabase.dao;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
-import androidx.room.Transaction;
-import androidx.room.Update;
+
+
+import com.example.myapplication.models.User;
 
 import java.util.List;
 
