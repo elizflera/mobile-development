@@ -1,18 +1,14 @@
 package com.example.myapplication.models;
 
 import androidx.annotation.NonNull;
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
-
 import java.util.UUID;
 
-@Entity(tableName = "Competition_table")
 public class Competition {
-    @PrimaryKey
-    @NonNull
+
     private Long competitionId;
     private String competitionName;
     private String date;
+
     public Competition(Long competitionId, String competitionName, String date){
         this.competitionId = competitionId;
         this.competitionName = competitionName;

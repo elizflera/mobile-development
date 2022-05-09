@@ -1,5 +1,6 @@
 package com.example.myapplication.view.fragments;
 
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,12 +12,13 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.myapplication.R;
-import com.example.myapplication.viewmodels.ViewModelMyProfile;
-import com.example.myapplication.viewmodels.ViewModelNavigation;
+import com.example.myapplication.viewmodels.ViewModelForgetPassword;
+import com.example.myapplication.viewmodels.ViewModelInfo;
 
-public final class FragmentMyProfile extends Fragment {
-//Дописать диалог фото
-    //private final Fragment navigationFragment;
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
+public class FragmentInfo extends Fragment {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,10 +32,12 @@ public final class FragmentMyProfile extends Fragment {
             @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState
     ) {
+        View root = inflater.inflate(R.layout.info, container, false);
 
-        View root = inflater.inflate(R.layout.my_profile, container, false);
-        ViewModelMyProfile viewModelMyProfile = new ViewModelProvider(this)
-                .get(ViewModelMyProfile.class);
+        ViewModelInfo viewModelInfo = new ViewModelProvider(this)
+                .get(ViewModelInfo.class);
+
+
         return root;
     }
 }

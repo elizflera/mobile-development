@@ -1,6 +1,7 @@
 package com.example.myapplication.view.fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,10 @@ import com.example.myapplication.FragmentChanger;
 import com.example.myapplication.R;
 
 import com.example.myapplication.viewmodels.ViewModelForgetPassword;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import dagger.hilt.android.AndroidEntryPoint;
 
 @AndroidEntryPoint
@@ -49,11 +54,14 @@ public class FragmentForgetPassword extends Fragment {
 
             if (emailText.isEmpty()) {
                 Toast.makeText(getContext(), "Empty email!", Toast.LENGTH_LONG).show();
-            } else {
+            } else if(!checkEmail(emailText)){
+                Toast.makeText(getContext(), "Incorrect email!", Toast.LENGTH_LONG).show();
+            }
+            else{
                 FragmentChanger.replaceFragment(
                         requireActivity().getSupportFragmentManager(),
                         R.id.container,
-                        new FragmentListRecycler()
+                        new FragmentSignIn()
                 );
             }
         });
@@ -63,10 +71,16 @@ public class FragmentForgetPassword extends Fragment {
             FragmentChanger.replaceFragment(
                     requireActivity().getSupportFragmentManager(),
                     R.id.container,
-                    new FragmentSignIn()
+                    new FragmentSignUp()
             );
         });
 
         return root;
+    }
+
+    boolean checkEmail(String emailText) {
+        Pattern p = Pattern.compile("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
+        Matcher m = p.matcher(emailText);
+        return m.matches();
     }
 }

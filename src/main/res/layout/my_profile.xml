@@ -99,7 +99,6 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_margin="10dp"
         android:layout_below="@id/layout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -109,10 +108,7 @@
         <CalendarView
             android:id="@+id/calendar"
             android:layout_width="302dp"
-            android:layout_height="319dp"
-            android:focusedMonthDateColor="#673AB7"
-            android:selectedWeekBackgroundColor="#FFFFFF"
-            android:weekNumberColor="#673AB7" />
+            android:layout_height="302dp"/>
     </LinearLayout>
 
 

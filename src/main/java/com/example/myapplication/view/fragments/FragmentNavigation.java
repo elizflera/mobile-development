@@ -26,6 +26,11 @@ public class FragmentNavigation extends Fragment {
         super.onCreate(savedInstanceState);
         home = new FragmentListRecycler();
         user = new FragmentMyProfile();
+        FragmentChanger.replaceFragment(
+                getChildFragmentManager(),
+                R.id.container_with_navigation,
+                home
+        );
     }
 
     @Nullable

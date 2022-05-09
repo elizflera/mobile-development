@@ -1,23 +1,14 @@
 package com.example.myapplication.models;
 
 import androidx.annotation.NonNull;
-import androidx.room.ColumnInfo;
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
 import java.util.UUID;
 
-@Entity(tableName = "users_table")
 public class User {
-    @PrimaryKey
-    @NonNull
+
     private Long id;
-    @ColumnInfo(name = "surname")
     private String surname;
-    @ColumnInfo(name = "name")
     private String name;
-    @ColumnInfo(name = "email")
     private String email;
-    @ColumnInfo(name = "password")
     private String password;
 
     public User(String surname, String name, String email, String password){

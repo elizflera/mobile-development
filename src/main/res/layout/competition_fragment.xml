@@ -23,7 +23,7 @@
 
         <TextView
             android:id="@+id/competition_name"
-            android:layout_width="256dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="serif"
             android:paddingLeft="10dp"
@@ -31,15 +31,6 @@
             android:textColor="#000000"
             android:textSize="14sp" />
 
-        <ImageButton
-            android:id="@+id/btnOpen"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_margin="5dp"
-            android:background="#FDFAFF"
-            android:contentDescription="open"
-            android:padding="5dp"
-            android:src="@drawable/ic_down_arrow" />
     </LinearLayout>
 
     <LinearLayout

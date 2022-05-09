@@ -6,9 +6,9 @@
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
-        android:icon="@drawable/round_all_white"
-        android:label="@string/app_name"
-        android:roundIcon="@drawable/ic_rhythmic_gymnastics"
+        android:icon="@mipmap/ic_launcher_round"
+        android:label="RG"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
